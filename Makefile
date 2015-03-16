@@ -5,7 +5,7 @@
 ## Login   <wery_a@epitech.net>
 ## 
 ## Started on  Tue Feb 24 15:16:58 2015 adrien wery
-## Last update Mon Mar 16 21:53:47 2015 adrien wery
+## Last update Mon Mar 16 23:48:16 2015 adrien wery
 ##
 
 SRC_CLI	= client.c \
@@ -19,11 +19,11 @@ SRC_SER	= server.c \
 	  str.c \
 	  my_getnbr_base.c \
 
-CC	= gcc -g
+CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -W -Wall -Wextra
+CFLAGS	= -W -Wall -Wextra -O2 -march=native
 
 CLIENT 	= client
 
