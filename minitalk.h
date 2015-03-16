@@ -5,13 +5,12 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:26:43 2015 adrien wery
-** Last update Mon Mar 16 21:53:26 2015 adrien wery
+** Last update Tue Mar 17 00:12:43 2015 adrien wery
 */
 
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <math.h>
 
 //	str
 void	my_putchar(char c);
