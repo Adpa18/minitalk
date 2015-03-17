@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Mon Mar 16 21:36:22 2015 adrien wery
-** Last update Mon Mar 16 21:51:54 2015 adrien wery
+** Last update Tue Mar 17 13:55:19 2015 adrien wery
 */
 
 #include "minitalk.h"
@@ -28,7 +28,7 @@ void    lost_cli(int pid)
 {
   my_str("\n", 1);
   my_str("\e[01;31m ---- Connection can't be etablished", 1);
-  my_str(" with the serer which PID = ", 1);
+  my_str(" with the server which PID = ", 1);
   my_putnbr(pid);
   my_str(" END OF CONNECTION ----\e[00;37m\n\n", 1);
   exit(-1);
