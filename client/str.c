@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:26:23 2015 adrien wery
-** Last update Mon Mar 16 18:37:21 2015 adrien wery
+** Last update Tue Mar 17 14:38:18 2015 adrien wery
 */
 
 #include "minitalk.h"
@@ -27,23 +27,6 @@ int	my_str(char *s, int mode)
       i += 1;
     }
   return (i);
-}
-
-int	my_strcmp(char *s1, char *s2)
-{
-  int	i;
-
-  i = 0;
-  while (s1[i] && s2[i])
-    {
-      if (s1[i] != s2[i])
-	return (s1[i] - s2[i]);
-      i++;
-    }
-  if (s1[i] == '\0' && s2[i] == '\0')
-    return (0);
-  else
-    return (-1);
 }
 
 void    my_putnbr(int nb)

@@ -5,22 +5,17 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:13:20 2015 adrien wery
-** Last update Mon Mar 16 23:44:39 2015 adrien wery
+** Last update Wed Mar 18 12:46:36 2015 adrien wery
 */
 
 #include "minitalk.h"
 
-void	reset()
+void	reset(char ch)
 {
-  if (*c() == 4)
+  if (ch == 0)
     succes();
   else
-    {
-      write(1, &(*c()), 1);
-      *bit() = 0;
-      *c() = '\0';
-      kill(*pid_cli(), SIGUSR1);
-    }
+    write(1, &ch, 1);
 }
 
 void	zero(int sig)
@@ -31,9 +26,17 @@ void	zero(int sig)
     reset_first(0, 0);
   else if (*len() == -1)
     get_len(0, 0);
+  else if (*len() == 1801 && *bit() == 8)
+    reset_file();
   else if (*bit() == 8)
-    reset();
-  else if (kill(*pid_cli(), SIGUSR1) == -1)
+    {
+      reset(*c());
+      *c() = '\0';
+      *bit() = 0;
+      if (*pid_cli() > 0)
+	kill(*pid_cli(), SIGUSR1);
+    }
+  else if (*pid_cli() > 0 && kill(*pid_cli(), SIGUSR1) == -1)
     lost();
 }
 
@@ -46,14 +49,24 @@ void	one(int sig)
     reset_first(1, 0);
   else if (*len() == -1)
     get_len(1, 0);
+  else if (*len() == 1801 && *bit() == 8)
+    reset_file();
   else if (*bit() == 8)
-    reset();
-  else if (kill(*pid_cli(), SIGUSR1) == -1)
+    {
+      reset(*c());
+      *c() = '\0';
+      *bit() = 0;
+      if (*pid_cli() > 0)
+	kill(*pid_cli(), SIGUSR1);
+    }
+  else if (*pid_cli() > 0 && kill(*pid_cli(), SIGUSR1) == -1)
     lost();
 }
 
 int     main()
 {
+  unsigned int	i;
+
   *c() = '\0';
   *bit() = 0;
   *pid_cli() = -1;
@@ -65,9 +78,10 @@ int     main()
   signal(SIGUSR2, &one);
   while (42)
     {
+      i = -1;
+      while (++i < 1000000);
       if (*pid_cli() != -1 && kill(*pid_cli(), SIGUSR2) == -1)
 	lost();
-      usleep(1);
     }
   return (0);
 }

@@ -5,39 +5,32 @@
 ## Login   <wery_a@epitech.net>
 ## 
 ## Started on  Tue Feb 24 15:16:58 2015 adrien wery
-## Last update Mon Mar 16 23:48:16 2015 adrien wery
+## Last update Fri Mar 20 17:19:28 2015 adrien wery
 ##
 
-SRC_CLI	= client.c \
-	  client2.c \
-	  str.c \
-	  my_getnbr_base.c \
+SRC_CLI	= $(wildcard ./client/*.c)
 
-SRC_SER	= server.c \
-	  server2.c \
-	  cheat.c \
-	  str.c \
-	  my_getnbr_base.c \
+SRC_SER	= $(wildcard ./server/*.c)
 
 CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -W -Wall -Wextra -O2 -march=native
+CFLAGS	= -W -Wall -Wextra
 
-CLIENT 	= client
+CLIENT 	= ./client/client
 
-SERVER 	= server
+SERVER 	= ./server/server
 
 OBJ_CLI	= $(SRC_CLI:.c=.o)
 
 OBJ_SER	= $(SRC_SER:.c=.o)
 
 $(CLIENT): $(OBJ_CLI)
-	$(CC) $(OBJ_CLI) -o $(CLIENT) -lm
+	$(CC) $(OBJ_CLI) -o $(CLIENT)
 
 $(SERVER): $(OBJ_SER)
-	$(CC) $(OBJ_SER) -o $(SERVER) -lm
+	$(CC) $(OBJ_SER) -o $(SERVER)
 
 all: $(CLIENT) $(SERVER)
 

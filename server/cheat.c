@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Mon Mar 16 21:26:24 2015 adrien wery
-** Last update Mon Mar 16 21:55:03 2015 adrien wery
+** Last update Tue Mar 17 14:10:38 2015 adrien wery
 */
 
 char    *c()
@@ -30,6 +30,13 @@ int     *pid_cli()
 }
 
 int     *len()
+{
+  static int	a = 0;
+
+  return (&a);
+}
+
+int     *fd()
 {
   static int	a = 0;
 
