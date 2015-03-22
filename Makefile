@@ -5,7 +5,7 @@
 ## Login   <wery_a@epitech.net>
 ## 
 ## Started on  Tue Feb 24 15:16:58 2015 adrien wery
-## Last update Fri Mar 20 17:19:28 2015 adrien wery
+## Last update Fri Mar 20 17:12:25 2015 adrien wery
 ##
 
 SRC_CLI	= $(wildcard ./client/*.c)
@@ -16,7 +16,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -W -Wall -Wextra
+CFLAGS	= ##-W -Wall -Wextra -O2 -march=native
 
 CLIENT 	= ./client/client
 

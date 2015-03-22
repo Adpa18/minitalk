@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:26:43 2015 adrien wery
-** Last update Fri Mar 20 17:14:07 2015 adrien wery
+** Last update Sun Mar 22 13:02:56 2015 adrien wery
 */
 
 #include <signal.h>
@@ -24,15 +24,12 @@ int     my_getnbr_base(char *s, char *base);
 //	server
 void	reset_first(int nb, int mode);
 void	get_len(int nb, int mode);
-char    *gen_name(char *start);
 void    zero(int sig);
 void    one(int sig);
 void	reset(char ch);
-void    reset_file();
 void	succes();
 void	lost();
 char	*c();
 int	*bit();
 int	*len();
 int	*pid_cli();
-int	*fd();

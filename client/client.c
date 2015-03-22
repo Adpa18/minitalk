@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:07:42 2015 adrien wery
-** Last update Wed Mar 18 15:15:02 2015 adrien wery
+** Last update Sun Mar 22 13:01:27 2015 adrien wery
 */
 
 #include "minitalk.h"
@@ -65,29 +65,9 @@ void	send_str(char *s, int pid)
     }
 }
 
-void    send_file(char *file, int pid)
-{
-  int   fd;
-  char  *s;
-  int	i;
-
-  s = malloc(BUFF_SIZE + 1);
-  if ((fd = open(file, O_RDONLY)) == -1)
-    my_error("Error on opening");
-  send_int(pid, 1801, 32);
-  while (read(fd, s, BUFF_SIZE) > 0)
-    {
-      send_str(s, pid);
-      i = -1;
-      while (++i < BUFF_SIZE)
-	s[i] = '\0';
-    }
-}
-
 int	main(int argc, char **argv)
 {
   int	pid;
-  int	i;
 
   if (argc < 3)
     my_error("Need PID and message");
@@ -96,15 +76,7 @@ int	main(int argc, char **argv)
   signal(SIGUSR1, &go);
   signal(SIGUSR2, &test);
   send_int(pid, getpid(), 32);
-  if (argv[2][0] == '-' && argv[2][1] == 'f' && argv[3])
-    send_file(argv[3], pid);
-  else
-    {
-      send_int(pid, my_str(argv[2], 0), 32);
-      i = -1;
-      while (argv[++i])
-	send_str(argv[i], pid);
-    }
+  send_str(argv[2], pid);
   send_int(pid, 0, 8);
   succes_cli(pid);
   return (0);

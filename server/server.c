@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:13:20 2015 adrien wery
-** Last update Wed Mar 18 12:46:36 2015 adrien wery
+** Last update Sun Mar 22 13:01:49 2015 adrien wery
 */
 
 #include "minitalk.h"
@@ -26,8 +26,6 @@ void	zero(int sig)
     reset_first(0, 0);
   else if (*len() == -1)
     get_len(0, 0);
-  else if (*len() == 1801 && *bit() == 8)
-    reset_file();
   else if (*bit() == 8)
     {
       reset(*c());
@@ -49,8 +47,6 @@ void	one(int sig)
     reset_first(1, 0);
   else if (*len() == -1)
     get_len(1, 0);
-  else if (*len() == 1801 && *bit() == 8)
-    reset_file();
   else if (*bit() == 8)
     {
       reset(*c());
