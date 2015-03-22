@@ -5,12 +5,19 @@
 ## Login   <wery_a@epitech.net>
 ## 
 ## Started on  Tue Feb 24 15:16:58 2015 adrien wery
-## Last update Fri Mar 20 17:12:25 2015 adrien wery
+## Last update Sun Mar 22 23:10:33 2015 adrien wery
 ##
 
-SRC_CLI	= $(wildcard ./client/*.c)
+SRC_CLI	= ./client/client.c \
+	  ./client/client2.c \
+	  ./str/my_getnbr_base.c \
+	  ./str/str.c
 
-SRC_SER	= $(wildcard ./server/*.c)
+SRC_SER	= ./server/server.c \
+	  ./server/server2.c \
+	  ./server/cheat.c \
+	  ./str/my_getnbr_base.c \
+	  ./str/str.c
 
 CC	= gcc
 

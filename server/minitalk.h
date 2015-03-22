@@ -5,23 +5,12 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:26:43 2015 adrien wery
-** Last update Sun Mar 22 13:02:56 2015 adrien wery
+** Last update Sun Mar 22 23:13:23 2015 adrien wery
 */
 
 #include <signal.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 
-//	str
-void	my_putchar(char c);
-int     my_str(char *s, int mode);
-void    my_putnbr(int nb);
-void    my_error(char *s);
-int     my_getnbr_base(char *s, char *base);
-
-//	server
 void	reset_first(int nb, int mode);
 void	get_len(int nb, int mode);
 void    zero(int sig);
