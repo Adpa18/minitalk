@@ -5,7 +5,7 @@
 ** Login   <wery_a@epitech.net>
 ** 
 ** Started on  Tue Feb 24 15:07:42 2015 adrien wery
-** Last update Sun Mar 22 13:01:27 2015 adrien wery
+** Last update Sun Mar 22 18:36:04 2015 adrien wery
 */
 
 #include "minitalk.h"
@@ -76,6 +76,7 @@ int	main(int argc, char **argv)
   signal(SIGUSR1, &go);
   signal(SIGUSR2, &test);
   send_int(pid, getpid(), 32);
+  send_int(pid, my_str(argv[2], 0), 32);
   send_str(argv[2], pid);
   send_int(pid, 0, 8);
   succes_cli(pid);
